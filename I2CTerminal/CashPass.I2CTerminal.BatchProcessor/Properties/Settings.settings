@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="VTFileWatcher.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="VTFileWatcher_CPGatewayLive_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://cpgateway4.cashpass.com/service.asmx</Value>
+    </Setting>
+    <Setting Name="VTFileWatcher_CPGatewayTest_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://cpgateway4-test.cashpass.com/service.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

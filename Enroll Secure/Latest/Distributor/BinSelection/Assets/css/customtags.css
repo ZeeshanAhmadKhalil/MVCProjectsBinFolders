@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+.ui-datepicker {
+    display: none;
+    padding: 0.2em 0.2em 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;    
+    font-size: 12px;
+    z-index: 100;
+}
+
+.calender3{
+	background: url(../plugin/jqueryui/ui/calendar.gif) no-repeat 97% center;
+}
+
+.tootip-c3{
+	background: url("../plugin/help.jpg") no-repeat scroll center center #fff !important;
+	border-width: 0 !important;
+	width: 24px !important;
+}
+input[value="TooltipValue"] { text-indent:-9999px; }

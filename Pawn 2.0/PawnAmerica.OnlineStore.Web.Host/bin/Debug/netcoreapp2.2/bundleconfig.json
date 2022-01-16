@@ -1,0 +1,255 @@
+[
+  {
+    "outputFileName": "wwwroot/view-resources/Views/_Bundles/account-layout.min.css",
+    "inputFiles": [
+      "wwwroot/fonts/roboto/roboto.css",
+      "wwwroot/fonts/material-icons/materialicons.css",
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/lib/toastr/toastr.css",
+      "wwwroot/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css",
+      "wwwroot/lib/font-awesome/css/font-awesome.css",
+      "wwwroot/lib/Waves/dist/waves.css",
+      "wwwroot/lib/animate.css/animate.css",
+      "wwwroot/css/materialize.css",
+      "wwwroot/css/style.css", 
+      "wwwroot/view-resources/Views/Account/_Layout.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/_Bundles/account-layout.min.js",
+    "inputFiles": [
+      "wwwroot/lib/json2/json2.js",
+      "wwwroot/lib/jquery/dist/jquery.js",
+      "wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "wwwroot/lib/moment/min/moment-with-locales.js",
+      "wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "wwwroot/lib/blockUI/jquery.blockUI.js",
+      "wwwroot/lib/toastr/toastr.js",
+      "wwwroot/lib/sweetalert/dist/sweetalert.min.js",
+      "wwwroot/lib/spin.js/spin.js",
+      "wwwroot/lib/spin.js/jquery.spin.js",
+      "wwwroot/lib/Waves/dist/waves.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/abp.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js",
+      "wwwroot/js/admin.js",
+      "wwwroot/js/main.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/_Bundles/shared-layout.min.css",
+    "inputFiles": [
+
+
+      "wwwroot/fonts/roboto/roboto.css",
+      "wwwroot/fonts/googlefonts.css",
+      "wwwroot/martfury/plugins/bootstrap4/css/bootstrap.min.css",
+      "wwwroot/lib/toastr/toastr.css",
+      "wwwroot/martfury/plugins/owl-carousel/assets/owl.carousel.css",
+      "wwwroot/martfury/plugins/slick/slick/slick.css",
+      "wwwroot/martfury/plugins/lightGallery-master/dist/css/lightgallery.min.css",
+      "wwwroot/martfury/plugins/jquery-ui/jquery-ui.min.css",
+      "wwwroot/martfury/plugins/select2/dist/css/select2.min.css",
+      "wwwroot/martfury/css/style.css",
+      "wwwroot/martfury/css/autopart.css",
+      "wwwroot/martfury/css/custom.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/_Bundles/shared-layout.min.js",
+    "inputFiles": [
+
+      "wwwroot/lib/json2/json2.js",
+      "wwwroot/lib/jquery/dist/jquery.js",
+      "wwwroot/martfury/plugins/jquery-1.12.4.min.js",
+      "wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "wwwroot/lib/moment/min/moment-with-locales.js",
+      "wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "wwwroot/martfury/plugins/jquery.validate.unobtrusive.js",
+      "wwwroot/lib/blockUI/jquery.blockUI.js",
+      "wwwroot/lib/toastr/toastr.js",
+      "wwwroot/lib/sweetalert/dist/sweetalert.min.js",
+      "wwwroot/lib/spin.js/spin.js",
+      "wwwroot/lib/spin.js/jquery.spin.js",
+      ///"wwwroot/lib/bootstrap-select/dist/js/bootstrap-select.js",
+      "wwwroot/lib/jquery-slimscroll/jquery.slimscroll.js", // on shop page, checkout page
+      ///"wwwroot/lib/Waves/dist/waves.js",
+      "wwwroot/lib/push.js/push.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/abp.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js",
+      "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js",
+      ////"wwwroot/js/admin.js",
+      "wwwroot/js/main.js",
+      /////"wwwroot/view-resources/Views/Shared/_Layout.js"
+
+      "wwwroot/martfury/plugins/popper.min.js",
+      "wwwroot/martfury/plugins/owl-carousel/owl.carousel.min.js",
+      "wwwroot/martfury/plugins/bootstrap4/js/bootstrap.min.js",
+      "wwwroot/martfury/plugins/imagesloaded.pkgd.js",
+      "wwwroot/martfury/plugins/masonry.pkgd.min.js",
+      "wwwroot/martfury/plugins/isotope.pkgd.min.js",
+      "wwwroot/martfury/plugins/jquery.matchHeight-min.js",
+      "wwwroot/martfury/plugins/slick/slick/slick.min.js",
+      /// "wwwroot/martfury/plugins/jquery-bar-rating/dist/jquery.barrating.min.js",
+      "wwwroot/martfury/plugins/slick-animation.min.js",
+      "wwwroot/martfury/plugins/lightGallery-master/dist/js/lightgallery-all.min.js",
+      "wwwroot/martfury/plugins/jquery-ui/jquery-ui.min.js",
+      ///"wwwroot/martfury/plugins/sticky-sidebar/dist/sticky-sidebar.min.js",
+      ///"wwwroot/martfury/plugins/jquery.slimscroll.min.js",
+      ///"wwwroot/martfury/plugins/select2/dist/js/select2.full.min.js",
+      "wwwroot/martfury/plugins/gmap3.min.js",
+      "wwwroot/view-resources/Views/ShoppingCart/ShoppingCart.min.js",
+      "wwwroot/view-resources/Views/main.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/_Bundles/home-index.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery-countTo/jquery.countTo.js",
+      "wwwroot/lib/raphael/raphael.js",
+      "wwwroot/lib/morris.js/morris.js",
+      "wwwroot/lib/chart.js/dist/Chart.bundle.js",
+      "wwwroot/lib/Flot/jquery.flot.js",
+      "wwwroot/lib/Flot/jquery.flot.resize.js",
+      "wwwroot/lib/Flot/jquery.flot.pie.js",
+      "wwwroot/lib/Flot/jquery.flot.categories.js",
+      "wwwroot/lib/Flot/jquery.flot.time.js",
+      "wwwroot/lib/jquery-sparkline/dist/jquery.sparkline.js",
+      "wwwroot/view-resources/Views/Home/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Account/Login.min.css",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Account/Login.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Account/Login.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Account/Login.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Product/_ProductQuickView.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Product/_ProductQuickView.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Account/Register.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Account/Register.js"
+    ]
+  },
+
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Roles/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Roles/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Shared/Components/TenantChange/_ChangeModal.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Shared/Components/TenantChange/_ChangeModal.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Shared/Components/TenantChange/Default.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Shared/Components/TenantChange/Default.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Checkout/CheckoutShipping.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Checkout/CheckoutShipping.js"
+    ]
+  },
+
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Home/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Home/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Checkout/PayNow.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/view-resources/Views/Checkout/PayNow.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Checkout/Review.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/view-resources/Views/Checkout/Review.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/MyAccount/_AddUserAddressModal.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/MyAccount/_AddUserAddressModal.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/MyAccount/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/MyAccount/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Shared/_Layout.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Shared/_Layout.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/ShoppingCart/ShoppingCart.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/ShoppingCart/ShoppingCart.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Tenants/_EditTenantModal.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/view-resources/Views/Tenants/_EditTenantModal.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Tenants/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Tenants/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Users/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Users/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Users/_EditUserModal.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Users/_EditUserModal.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/Shop/Shop.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/Shop/Shop.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Views/main.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Views/main.js"
+    ]
+  }
+]

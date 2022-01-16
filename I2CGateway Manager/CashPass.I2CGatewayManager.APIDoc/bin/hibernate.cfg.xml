@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+
+<configuration>
+    <configSections>
+        <section name="hibernate-configuration" type="NHibernate.Cfg.ConfigurationSectionHandler, NHibernate"/>
+    </configSections>
+
+    <hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+        <session-factory>
+            <property name="current_session_context_class">managed_web</property>
+            <!--<property name="connection.connection_string">server=172.16.100.2;database=VT2Test;uid=vt2;pwd=cashpass // Data Source=localhost\sqlexpress;Initial Catalog=VT2;uid=vt2;pwd=cashpass</property>-->
+            <property name="connection.connection_string">Data Source=localhost\sqlexpress;Initial Catalog=cpgateway4;integrated security=true;</property>
+        </session-factory>
+
+    </hibernate-configuration>
+
+
+
+</configuration>

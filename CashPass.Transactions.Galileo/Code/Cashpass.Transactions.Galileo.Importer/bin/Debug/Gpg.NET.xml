@@ -1,0 +1,959 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gpg.NET</name>
+    </assembly>
+    <members>
+        <member name="T:Gpg.NET.GpgContextExtensions">
+            <summary>
+            Contains extension methods for use with a <see cref="T:Gpg.NET.GpgContext"/>
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgContextExtensions.EncryptString(Gpg.NET.GpgContext,System.String,System.String,System.Collections.Generic.IEnumerable{Gpg.NET.GpgKey},Gpg.NET.EncryptFlags,System.Boolean)">
+            <summary>
+            Encrypts a string and writes the ciphertext to a file.
+            </summary>
+            <param name="context">The <see cref="T:Gpg.NET.GpgContext"/> to operate on.</param>
+            <param name="plaintext">The plaintext to be encrypted.</param>
+            <param name="outputFilePath">The path where the encrypted file should be saved.</param>
+            <param name="encryptFlags">The encryption flags to be used.</param>
+            <param name="overwrite">Whether the existing file should be overwritten if a file already exists at <paramref name="outputFilePath"/>.</param>
+            <param name="recipients">The GPG keys for which the data should be encrypted.</param>
+        </member>
+        <member name="M:Gpg.NET.GpgContextExtensions.DecryptFile(Gpg.NET.GpgContext,System.String)">
+            <summary>
+            Decrypts a file and returns its contents.
+            </summary>
+            <param name="context">The <see cref="T:Gpg.NET.GpgContext"/> to operate on.</param>
+            <param name="inputFilePath">The path to the encrypted file.</param>
+        </member>
+        <member name="M:Gpg.NET.GpgContextExtensions.DecryptFile(Gpg.NET.GpgContext,System.String,System.String,System.Boolean)">
+            <summary>
+            Decrypts a file and writes its decrypted content to another file.
+            </summary>
+            <param name="context">The <see cref="T:Gpg.NET.GpgContext"/> to operate on.</param>
+            <param name="inputFilePath">The path to the encrypted file.</param>
+            <param name="outputFilePath">The path where the decrypted file should be saved.</param>
+            <param name="overwrite">Whether the existing file should be overwritten if a file already exists at <paramref name="outputFilePath"/>.</param>
+        </member>
+        <member name="M:Gpg.NET.GpgContextExtensions.EncryptFile(Gpg.NET.GpgContext,System.String,System.String,System.Collections.Generic.IEnumerable{Gpg.NET.GpgKey},Gpg.NET.EncryptFlags,System.Boolean)">
+            <summary>
+            Encrypts a file and writes the ciphertext to another file.
+            </summary>
+            <param name="context">The <see cref="T:Gpg.NET.GpgContext"/> to operate on.</param>
+            <param name="inputFilePath">The path to the unencrypted file.</param>
+            <param name="outputFilePath">The path where the encrypted file should be saved.</param>
+            <param name="encryptFlags">The encryption flags to be used.</param>
+            <param name="overwrite">Whether the existing file should be overwritten if a file already exists at <paramref name="outputFilePath"/>.</param>
+            <param name="recipients">The GPG keys for which the data should be encrypted.</param>
+        </member>
+        <member name="T:Gpg.NET.GpgBuffer">
+            <summary>
+            Represents a data buffer, used for sending data to GPG.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgBuffer.CanRead">
+            <summary>
+            Gets a value indicating whether this stream supports reading.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgBuffer.CanSeek">
+            <summary>
+            Gets a value indicating whether this stream supports seeking.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgBuffer.CanWrite">
+            <summary>
+            Gets a value indicating whether this stream supports writing.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgBuffer.Length">
+            <summary>
+            Gets the length in bytes of the stream.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgBuffer.Position">
+            <summary>
+            Gets or sets the current position within the buffer.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgBuffer.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Sets the position of the current stream.
+            </summary>
+            <param name="offset">A byte offset relative to the <paramref name="origin"/> parameter.</param>
+            <param name="origin">A value of type <see cref="T:System.IO.SeekOrigin"/> indicating the reference point used to obtain the new position.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gpg.NET.GpgBuffer.SetLength(System.Int64)">
+            <summary>
+            Sets the length of the current stream.
+            </summary>
+            <param name="value">The desired length of the current stream in bytes.</param>
+        </member>
+        <member name="M:Gpg.NET.GpgBuffer.#ctor(System.IntPtr)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Gpg.NET.GpgBuffer"/> class.
+            </summary>
+            <param name="handle"></param>
+        </member>
+        <member name="M:Gpg.NET.GpgBuffer.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a sequence of bytes from the current stream and advances the position
+            within the stream by the number of bytes read.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgBuffer.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes a sequence of bytes from the current stream and advances the position
+            within the stream by the number of bytes written.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgBuffer.Flush">
+            <summary>
+            This method has no effect.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgBuffer.Dispose">
+            <summary>
+            Requests GPG to release the buffer and free the memory it has taken up.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.EngineInfo">
+            <summary>
+            Contains information about a GPG Engine.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.EngineInfo.Protocol">
+            <summary>
+            Gets the protocol for which the engine is used.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.EngineInfo.Filename">
+            <summary>
+            Gets the file name of the executable of the crypto engine.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.EngineInfo.HomeDir">
+            <summary>
+            Gets the directory name of the engine's configuration directory. If it is null, the default directory is used.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.EngineInfo.Version">
+            <summary>
+            Gets the version number of the crypto engine.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.EngineInfo.ReqVersion">
+            <summary>
+            Gets the minimum required version number of the engine for GpgME to work correctly.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.EngineInfo.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.FileGpgBuffer">
+            <summary>
+            Represents a file-backed data buffer, used for sending data to GPG.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.FileGpgBuffer.CreateFileBuffer(System.String)">
+            <summary>
+            Creates a new file-based buffer. Not yet implemented.
+            </summary>
+            <param name="path">The path to the file from which the buffer should be created.
+            If no file exists at the given path, a file is created.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gpg.NET.GpgContext">
+            <summary>
+            Represents a GPG context, which can be configured to use a specific protocol
+            and holds settings related to encryption and decryption.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgContext.KeylistMode">
+            <summary>
+            Gets or sets the key listing mode currently in use by this <see cref="T:Gpg.NET.GpgContext"/>.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgContext.CreateContext">
+            <summary>
+            Creates a new <see cref="T:Gpg.NET.GpgContext"/> and returns it.
+            </summary>
+            <returns>The <see cref="T:Gpg.NET.GpgContext"/> that was created.</returns>
+        </member>
+        <member name="M:Gpg.NET.GpgContext.Decrypt(Gpg.NET.GpgBuffer)">
+            <summary>
+            Attempts to decrypt the contents of a data buffer.
+            If required, the user will be prompted for a password using the default pinentry program.
+            </summary>
+            <param name="cipher">A DataBuffer containing the data to be decrypted.</param>
+            <returns>A DataBuffer containing the decrypted data.</returns>
+        </member>
+        <member name="M:Gpg.NET.GpgContext.Encrypt(Gpg.NET.GpgBuffer,Gpg.NET.GpgKey)">
+            <summary>
+            Attempts to encrypt the contents of a data buffer for the given recipient.
+            </summary>
+            <param name="plain">A DataBuffer containing the plaintext data to be encrypted.</param>
+            <param name="recipient">The GPG key for which the data should be encrypted.</param>
+            <returns>A DataBuffer containing the encrypted data.</returns>
+        </member>
+        <member name="M:Gpg.NET.GpgContext.Encrypt(Gpg.NET.GpgBuffer,System.Collections.Generic.IEnumerable{Gpg.NET.GpgKey},Gpg.NET.EncryptFlags)">
+            <summary>
+            Attempts to encrypt the contents of a data buffer for multiple recipients.
+            </summary>
+            <param name="plain">A DataBuffer containing the plaintext data to be encrypted.</param>
+            <param name="recipients">The GPG keys for which the data should be encrypted.</param>
+            <param name="encryptFlags">The encryption flags to be used.</param>
+            <returns>A DataBuffer containing the encrypted data.</returns>
+        </member>
+        <member name="M:Gpg.NET.GpgContext.GetKey(System.String)">
+            <summary>
+            Gets the GPG key associated with the given key ID.
+            This method will throw an exception if the given key ID matches zero or multiple keys.
+            </summary>
+            <param name="keyId">The key ID of the requested GPG key.</param>
+            <exception cref="T:Gpg.NET.GpgKeyNotFoundException">
+            Thrown when the given key ID matches zero or multiple keys.
+            </exception>
+        </member>
+        <member name="M:Gpg.NET.GpgContext.GetKeys(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets the GPG keys associated with the given key IDs.
+            This method will throw an exception if any of the given key IDs matches zero or multiple keys.
+            </summary>
+            <param name="keyIds">The key IDs of the requested GPG keys.</param>
+            <exception cref="T:Gpg.NET.GpgKeyNotFoundException">
+            Thrown when one of the given key IDs matches zero or multiple keys.
+            </exception>
+        </member>
+        <member name="M:Gpg.NET.GpgContext.FindKeys(System.String,System.Boolean)">
+            <summary>
+            Searches for keys matching the given search parameters.
+            </summary>
+            <param name="pattern">One or more GPG key IDs to search for. The default value (null) matches all keys.</param>
+            <param name="privateOnly">True if only GPG keys for which a private key is available should be returned, false otherwise.</param>
+            <returns>A list of GPG keys matching the given search parameters.</returns>
+        </member>
+        <member name="M:Gpg.NET.GpgContext.FindKey(System.String,System.Boolean)">
+            <summary>
+            Searches for keys matching the given search parameters, returning the first matching key.
+            </summary>
+            <param name="pattern">One or more GPG key IDs to search for. The default value (null) matches all keys.</param>
+            <param name="privateOnly">True if only GPG keys for which a private key is available should be returned, false otherwise.</param>
+            <returns>Returns the first GPG key that matches the given search parameters, or null if there are no matches.</returns>
+        </member>
+        <member name="M:Gpg.NET.GpgContext.Dispose">
+            <summary>
+            Releases the underlying GPGME context.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.GpgKey">
+            <summary>
+            Represents a GPG key, which can be used for encryption and decryption of data.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.KeylistMode">
+            <summary>
+            Gets the key listing mode that was active when this key was retrieved.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.Revoked">
+            <summary>
+            Gets a value indicating whether the key has been revoked by its owner.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.Expired">
+            <summary>
+            Gets a value indicating whether the key has expired.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.Disabled">
+            <summary>
+            Gets a value indicating whether the key has been disabled.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.Invalid">
+            <summary>
+            Gets a value indicating whether the key is invalid.
+            This might have several reasons, for a example for the S/MIME backend,
+            it will be set during key listings if the key could not be validated due to missing certificates or unmatched policies. 
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.CanEncrypt">
+            <summary>
+            Gets a value indicating whether the key can be used as a recipient for encryption.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.CanSign">
+            <summary>
+            Gets a value indicating whether the key can be used for signing data.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.CanCertify">
+            <summary>
+            Gets a value indicating whether the key can be used for certifying other keys and manipulating subkeys.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.CanAuthenticate">
+            <summary>
+            Gets a value indicating whether the key can be used for authentication.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.IsQualified">
+            <summary>
+            Gets a value indicating whether the key can be used for qualified signatures according to local government regulations.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.Secret">
+            <summary>
+            Gets a value indicating whether the key is a secret key.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.Protocol">
+            <summary>
+             Gets the protocol supported by the current <see cref="T:Gpg.NET.GpgKey"/>.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.IssuerSerial">
+            <summary>
+            Gets the issuer serial for the current <see cref="T:Gpg.NET.GpgKey"/>.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.IssuerName">
+            <summary>
+            Gets the issuer name for the current <see cref="T:Gpg.NET.GpgKey"/>.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.ChainId">
+            <summary>
+            If <see cref="P:Gpg.NET.GpgKey.Protocol"/> is Protocol.Cms, gets the chain ID; which can be used to build the certificate chain.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.OwnerTrust">
+            <summary>
+            If <see cref="P:Gpg.NET.GpgKey.Protocol"/> is Protocol.OpenPgp, gets the owner trust for this key.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.Subkeys">
+            <summary>
+            Gets the subkeys belonging to the current <see cref="T:Gpg.NET.GpgKey"/>.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.Uids">
+            <summary>
+            Gets the User Ids considered to be the owners of the current <see cref="T:Gpg.NET.GpgKey"/>.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgKey.Fingerprint">
+            <summary>
+            Gets the fingerprint of the primary key. This is a copy of the fingerprint of the first <see cref="T:Gpg.NET.GpgSubkey"/>.
+            For an incomplete key (for example from a verification result) a subkey may be missing but this field may be set nevertheless.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgKey.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.GpgKeyNotFoundException">
+            <summary>
+            Thrown when the lookup of a GPG key fails.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgKeyNotFoundException.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Gpg.NET.GpgKeyNotFoundException"/> class.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.EncryptFlags">
+            <summary>
+            A set of flags representing encryption settings used by GPG.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.EncryptFlags.None">
+            <summary>
+            Do not set any encryption flags.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.EncryptFlags.AlwaysTrust">
+            <summary>
+            Trust all recipients, regardless of their validity.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.EncryptFlags.NoEncryptTo">
+            <summary>
+            Do not encrypt to the default or hidden default recipients in addition to the recipients specified.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.EncryptFlags.NoCompress">
+            <summary>
+            Do not compress the plaintext before encrypting it.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.EncryptFlags.Prepare">
+            <summary>
+            Used with the UI server protocol to prepare an encryption.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.EncryptFlags.ExpectSign">
+            <summary>
+            Used with the UI server protocol tell the server to also expect a sign commmand.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.EncryptFlags.EncryptSymmetric">
+            <summary>
+            Also encrypt the output symmetrically, even if recipients are provided.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.GpgMeError">
+            <summary>
+            Enumerates error codes as used by GpgME.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.GpgMeException">
+            <summary>
+            Wraps a GpgME error code.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgMeException.GpgMeError">
+            <summary>
+            The name of the GpgME error returned.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgMeException.GpgErrorCode">
+            <summary>
+            The GpgME error as an integer.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgMeException.#ctor(Gpg.NET.GpgMeError,System.String)">
+            <summary>
+            Creates a new GpgMeException.
+            </summary>
+            <param name="error">The GpgMeError that was returned.</param>
+            <param name="message">The error message associated with the error code.</param>
+        </member>
+        <member name="T:Gpg.NET.GpgNetException">
+            <summary>
+            Represents a generic error in Gpg.NET.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgNetException.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Gpg.NET.GpgNetException"/> class.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.Interop.GpgMeHelper">
+            <summary>
+            Contains various helper functions to make it easier to interface with GpgME.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.Interop.GpgMeHelper.GetEngines">
+            <summary>
+            Returns a list of all engines available for use.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.Interop.GpgMeHelper.GetEngines(Gpg.NET.GpgContext)">
+            <summary>
+            Returns a list of all engines available for use with the given context.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.Interop.GpgMeHelper.FindKeys(Gpg.NET.GpgContext,System.String,System.Boolean)">
+            <summary>
+            Searches the keyring for all keys that match the given search parameters.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.Interop.GpgMeHelper.FindKey(Gpg.NET.GpgContext,System.String,System.Boolean)">
+            <summary>
+            Searches the keyring for all keys that match the given search parameters,
+            and stops the search as soon as the first match is found.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.Interop.GpgMeHelper.ReadBuffer(System.IntPtr,System.Int32)">
+            <summary>
+            Read a GpgME data buffer into a C# byte buffer.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.GpgMeProtocol">
+            <summary>
+            Specifies the set of possible protocol values that are supported by GpgME.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgMeProtocol.OpenPgp">
+            <summary>
+            The OpenPGP protocol.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgMeProtocol.Cms">
+            <summary>
+            Cryptographic Message Syntax.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgMeProtocol.GpgConf">
+            <summary>
+            Under development. Please ask on gnupg-devel@gnupg.org for help.  
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgMeProtocol.Assuan">
+            <summary>
+            The raw Assuan protocol.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgMeProtocol.G13">
+            <summary>
+            Under development. Please ask on gnupg-devel@gnupg.org for help. 
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgMeProtocol.UiServer">
+            <summary>
+            Under development. Please ask on gnupg-devel@gnupg.org for help. 
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgMeProtocol.Spawn">
+            <summary>
+            Special protocol used for running processes.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.GpgSubkey">
+            <summary>
+            Represents a GPG subkey, which belongs to a <see cref="T:Gpg.NET.GpgKey"/> and is the
+            key that's actually responsible for cryptographic operations.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Revoked">
+            <summary>
+            Gets a value indicating whether the subkey has been revoked by its owner.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Expired">
+            <summary>
+            Gets a value indicating whether the subkey has expired.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Disabled">
+            <summary>
+            Gets a value indicating whether the subkey has been disabled.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Invalid">
+            <summary>
+            Gets a value indicating whether the subkey is invalid.
+            This might have several reasons, for a example for the S/MIME backend,
+            it will be set during key listings if the key could not be validated due to missing certificates or unmatched policies. 
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.CanEncrypt">
+            <summary>
+            Gets a value indicating whether the subkey can be used as a recipient for encryption.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.CanSign">
+            <summary>
+            Gets a value indicating whether the subkey can be used for signing data.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.CanCertify">
+            <summary>
+            Gets a value indicating whether the subkey can be used for certifying other keys and manipulating subkeys.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.CanAuthenticate">
+            <summary>
+            Gets a value indicating whether the subkey can be used for authentication.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Secret">
+            <summary>
+            Gets a value indicating whether the subkey is a secret key.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.IsQualified">
+            <summary>
+            Gets a value indicating whether the subkey can be used for qualified signatures according to local government regulations.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.IsCardkey">
+            <summary>
+            Gets a value indicating whether the subkey is stored on a smart card.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.PublicKeyAlgorithm">
+            <summary>
+            Gets the algorithm used for this subkey.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Length">
+            <summary>
+            Gets the length (in bits) of the subkey.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.KeyId">
+            <summary>
+            Gets the ID of the subkey in hexadecimal digits.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Fingerprint">
+            <summary>
+            Gets the fingerprint of the subkey in hexadecimal digits, if available.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Created">
+            <summary>
+            Gets the date and time at which the subkey was created.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Expires">
+            <summary>
+            Gets the date and time at which the subkey expires.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.CardNumber">
+            <summary>
+            If the subkey is stored on a smart card, gets the serial number of the smart card holding this key.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Curve">
+            <summary>
+            If the subkey algorithm is an ECC Algorith, gets the name of the curve.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgSubkey.Keygrip">
+            <summary>
+            Gets the keygrip of the current subkey, if available.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgSubkey.ToString">
+            <summary>
+            Returns a string representation of the current object.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.GpgKeylistMode">
+            <summary>
+            Specifies the behaviour of a key listing operation.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgKeylistMode.Unknown">
+            <summary>
+            Unknown or no options set.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgKeylistMode.Local">
+            <summary>
+            Search the local keyring for keys.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgKeylistMode.Extern">
+            <summary>
+            Search an external source for keys.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgKeylistMode.Sigs">
+            <summary>
+            Include signatures.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgKeylistMode.SigNotations">
+            <summary>
+            Include signature notations.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgKeylistMode.WithSecret">
+            <summary>
+            Include information about the presence of a corresponding secret key in a public key listing.
+            A public key listing with this mode is slower than a standard listing but can be used instead of a second run to list the secret keys.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgKeylistMode.WithTofu">
+            <summary>
+            Include information pertaining to the TOFU trust model.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgKeylistMode.Ephemeral">
+            <summary>
+            Include keys flagged as ephemeral.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgKeylistMode.Validate">
+            <summary>
+            Validate keys/certificates instead of getting the validity information from an internal cache. 
+            This might be an expensive operation and is in general not useful. 
+            Currently only implemented for the S/MIME backend and ignored for other backends. 
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.PublicKeyAlgorithm">
+            <summary>
+            Enumerates public key algorithms supported by GpgME.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.Unknown">
+            <summary>
+            An unknown algorithm.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.RSA">
+            <summary>
+            The RSA (Rivest, Shamir, Adleman) algorithm.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.RsaE">
+            <summary>
+            The RSA algorith, for encryption and decryption only.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.RsaS">
+            <summary>
+            The RSA algorithm, for signing and verification only.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.ElgamalE">
+            <summary>
+            Also indicates Elgamal and is used specifically in GnuPG.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.DSA">
+            <summary>
+            DSA (Digital Signature Algorithm).
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.ECC">
+            <summary>
+            Generic indicator for elliptic curve algorithms.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.Elgamal">
+            <summary>
+            Elgamal.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.ECDSA">
+            <summary>
+            Elliptic Curve Digital Signature Algorithm as defined by FIPS 186-2 and RFC-6637.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.ECDH">
+            <summary>
+            Elliptic Curve Diffie-Hellmann as defined by RFC-6637
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.PublicKeyAlgorithm.EdDSA">
+            <summary>
+            The Edwards DSA Algorithm.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.GpgNet">
+            <summary>
+            Used to configure and initialise the underlying GPGME library.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.Version">
+            <summary>
+            Gets the version of the GpgME library currently in use.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.Initialised">
+            <summary>
+            Gets a value indicating whether the underlying GpgME library has been initialised.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.AvailableEngines">
+            <summary>
+            Gets a list of GpgME engines available for use.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.Homedir">
+            <summary>
+            Gets the default home directory for GPG.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.Sysconfdir">
+            <summary>
+            Gets the system configuration directory of GPG.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.Bindir">
+            <summary>
+            Gets the directory containing the GPG binaries.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.Libdir">
+            <summary>
+            Gets the directory containing the GPG libraries.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.Libexecdir">
+            <summary>
+            Gets the directory containing the GPG helper program files.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.Datadir">
+            <summary>
+            Gets the directory containing shared data used by GPG.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.Localedir">
+            <summary>
+            Gets the directory containing locale data used by GPG.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgNet.AgentSocket">
+            <summary>
+            Gets the path to the socket file used to connect to the GPG agent.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgNet.Initialise(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialises the underlying GpgME library.
+            </summary>
+            <param name="dllPath">When set, overrides the default GpgME DLL location.</param>
+            <param name="installDir">When set, overrides the default GpgME installation directory.
+            This should point to the bin directory of the GPG installation directory.</param>
+            <param name="minLibraryVersion">
+            The minimum required version of GpgME. Set to null to disable this version check.
+            </param>
+            <param name="minGpgVersion">
+            The minimum required version of Gpg. Set to null to disable this version check.
+            </param>
+        </member>
+        <member name="M:Gpg.NET.GpgNet.EnsureProtocol(Gpg.NET.GpgMeProtocol)">
+            <summary>
+            Ensures the given protocol is available. If it isn't, an exception is thrown.
+            </summary>
+            <param name="protocol">The <see cref="T:Gpg.NET.GpgMeProtocol"/> to check for.</param>
+            <exception cref="T:Gpg.NET.GpgMeException">Thrown if the given protocol is not available, badly configured, or otherwise unusable.</exception>
+        </member>
+        <member name="M:Gpg.NET.GpgNet.EnableDebugging(System.String,System.Int32)">
+            <summary>
+            Enable GpgME debugging. This should be done before GpgME is initialised.
+            </summary>
+            <param name="debugPath">
+            The path to the file debug output should be saved to. If this is set to its default of null,
+            debug output is saved to a file named <code>gpgme-debug.txt</code> in the current working directory.
+            </param>
+            <param name="debugLevel">The verbosity level of GpgME. A higher number increases verbosity.</param>
+        </member>
+        <member name="T:Gpg.NET.GpgValidity">
+            <summary>
+            Enumerates key validity or trust.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgValidity.Unknown">
+            <summary>
+            Unknown validity.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgValidity.Undefined">
+            <summary>
+            Undefined validity.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgValidity.Never">
+            <summary>
+            User ID is never valid.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgValidity.Marginal">
+            <summary>
+            Marginal validity.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgValidity.Full">
+            <summary>
+            User ID is fully valid.
+            </summary>
+        </member>
+        <member name="F:Gpg.NET.GpgValidity.Ultimate">
+            <summary>
+            Ultimate validity.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.GpgUserId">
+            <summary>
+            Represents a GPG user ID, which is a component of a GPG key.
+            One key can have many user IDs. The first one in the list is the main (or primary) user ID.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgUserId.Validity">
+            <summary>
+            Gets the validity of the current User ID.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgUserId.Uid">
+            <summary>
+            Gets the User ID string.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgUserId.Name">
+            <summary>
+            Gets the name component of the current User ID, if available.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgUserId.Email">
+            <summary>
+            Gets the email component of the current User ID, if available.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgUserId.Comment">
+            <summary>
+            Gets the comment component of the current User ID, if available.
+            </summary>
+        </member>
+        <member name="P:Gpg.NET.GpgUserId.Address">
+            <summary>
+            Gets the email address (addr-spec from RFC-5322) of the user ID string.
+            This is generally the same as <see cref="P:Gpg.NET.GpgUserId.Email"/> but might be slightly different.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.GpgUserId.ToString">
+            <summary>
+            Returns a string representation of the current object.
+            </summary>
+        </member>
+        <member name="T:Gpg.NET.MemoryGpgBuffer">
+            <summary>
+            Represents a memory-backed data buffer, used for sending data to GPG.
+            </summary>
+        </member>
+        <member name="M:Gpg.NET.MemoryGpgBuffer.Create">
+            <summary>
+            Creates a new, empty memory-mapped buffer.
+            </summary>
+            <returns>The buffer that was created.</returns>
+        </member>
+        <member name="M:Gpg.NET.MemoryGpgBuffer.Create(System.Byte[])">
+            <summary>
+            Creates a new memory-mapped buffer and initialises it with the given data.
+            </summary>
+            <param name="content">The bytes that should be written to the buffer.</param>
+            <returns>The buffer that was created.</returns>
+        </member>
+        <member name="M:Gpg.NET.MemoryGpgBuffer.CreateFromString(System.String,System.Text.Encoding)">
+            <summary>
+            Creates a new memory-mapped buffer and initialises it with text data using the specified encoding.
+            </summary>
+            <param name="content">A string of text to be encoded and stored in the buffer.</param>
+            <param name="encoding">The encoding to be used to encode the text.</param>
+            <returns>The buffer that was created.</returns>
+        </member>
+        <member name="M:Gpg.NET.MemoryGpgBuffer.CreateFromString(System.String)">
+            <summary>
+            Creates a new memory-mapped buffer and initialises it with UTF-8 encoded text data.
+            </summary>
+            <param name="content">A string of text, to be encoded as UTF-8 and stored in the buffer.</param>
+            <returns>The buffer that was created.</returns>
+        </member>
+        <member name="M:Gpg.NET.MemoryGpgBuffer.CreateFromFile(System.String)">
+            <summary>
+            Creates a new memory-mapped buffer and initialises it with the contents of a file.
+            </summary>
+            <param name="path">The path to the file of which the content should be stored in the buffer.</param>
+            <returns>The buffer that was created.</returns>
+        </member>
+        <member name="M:Gpg.NET.Utilities.Helpers.DateTimeFromEpochTime(System.Int64)">
+            <summary>
+            Turns a Unix timestamp into a DateTime object.
+            </summary>
+        </member>
+    </members>
+</doc>
